@@ -9,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class HeroComponent {
 
+  scrollTo(section: string) {
+    document.getElementById(section)?.scrollIntoView({
+      behavior: 'smooth'
+    });
+  }
+
 }

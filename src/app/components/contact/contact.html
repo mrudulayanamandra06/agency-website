@@ -18,22 +18,31 @@
 
     </div>
 
-    <form class="space-y-6">
+    <form (ngSubmit)="sendEmail()" class="space-y-6">
 
       <input
         type="text"
+        name="from_name"
+        [(ngModel)]="form.from_name"
         placeholder="Your Name"
-        class="w-full rounded-xl border border-white/10 bg-white/5 p-4 outline-none focus:border-yellow-400">
+        class="w-full rounded-xl border border-white/10 bg-white/5 p-4 outline-none focus:border-yellow-400"
+        required>
 
       <input
         type="email"
+        name="from_email"
+        [(ngModel)]="form.from_email"
         placeholder="Your Email"
-        class="w-full rounded-xl border border-white/10 bg-white/5 p-4 outline-none focus:border-yellow-400">
+        class="w-full rounded-xl border border-white/10 bg-white/5 p-4 outline-none focus:border-yellow-400"
+        required>
 
       <textarea
         rows="6"
+        name="message"
+        [(ngModel)]="form.message"
         placeholder="Tell me about your project..."
-        class="w-full rounded-xl border border-white/10 bg-white/5 p-4 outline-none focus:border-yellow-400"></textarea>
+        class="w-full rounded-xl border border-white/10 bg-white/5 p-4 outline-none focus:border-yellow-400"
+        required></textarea>
 
       <button
         type="submit"
